@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-//$main-color: #626e80;
-//$text-color: black;
-//$contrast-color: white;
-//$hasAnimations: false;
-//$border-radius: 20px;
+$main-color: #4a6db3;
+$text-color: black;
+$contrast-color: white;
+$hasAnimations: true;
+$border-radius: 20px;
 
 @import "~projects/file-manager/src/styles";
 
-//div.item-holder app-node {
+// div.item-holder app-node {
 //  flex-grow: 1;
 //  text-align: center;
-//}
+// }
 
 body {
   font-family: 'Open Sans', sans-serif;

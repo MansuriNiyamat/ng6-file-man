@@ -14,5 +14,5 @@ export interface ConfigInterface {
   options: {
     allowFolderDownload: boolean;
     showFilesInsideTree: boolean;
-  }
+  };
 }

@@ -32,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     NgxSmartModalModule.forRoot(),
     TranslateModule.forRoot({
-      loader:{
+      loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]}

@@ -10,11 +10,11 @@ import {TreeModel, NodeInterface, ConfigInterface} from '../../projects/file-man
 export class AppComponent {
   tree: TreeModel;
   node: NodeInterface;
-  appLanguage = 'sk';
+  appLanguage = 'en';
 
   constructor() {
     const treeConfig: ConfigInterface = {
-      baseURL: 'http://localhost:8080/',
+      baseURL: 'http://localhost:8082/',
       api: {
         listFile: 'api/list',
         uploadFile: 'api/upload',
@@ -36,6 +36,9 @@ export class AppComponent {
 
   // noinspection JSUnusedLocalSymbols
   itemSelected(event: any) {
+    console.log(event);
+  }
+  itemClicked(event: any) {
     console.log(event);
   }
 }
