@@ -64,7 +64,8 @@ export class NodeService {
     }
 
     const cachedNode = this.findNodeByPath(node.path);
-
+    console.log('inside node creation');
+    console.log(node);
     return <NodeInterface>{
       id: node.id,
       isFolder: node.dir,
@@ -74,6 +75,7 @@ export class NodeService {
       name: node.name || node.id,
       children: cachedNode ? cachedNode.children : {},
       createdDate: new Date(),
+      size: node.size,
     };
   }
 

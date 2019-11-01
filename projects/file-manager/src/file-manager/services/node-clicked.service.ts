@@ -71,8 +71,8 @@ export class NodeClickedService {
                            failMethod = (a, b) => this.actionFailed(a, b)
   ) {
     const params = this.parseParams(parameters);
-    console.log('inside node clicked servicec');
-    console.log(params);
+   // console.log('inside node clicked servicec');
+    // console.log(params);
     this.ngxSmartModalService.getModal('waitModal').open();
 
     this.reachServer(httpMethod, apiURL + params)

@@ -9,7 +9,7 @@ import {NodeService} from '../../../services/node.service';
   styleUrls: ['./upload.component.scss', './fine-uploader/fine-uploader.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class 
+export class
 UploadComponent implements OnInit, AfterViewInit {
   @Input() openDialog;
 

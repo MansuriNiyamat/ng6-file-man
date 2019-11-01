@@ -23,6 +23,11 @@
         <!--top navbar Header-->
         <app-nav-bar></app-nav-bar>
       </div>
+      <div class="action">
+        <div class="new" (click)="handleUploadDialog($event)">
+          <ng-container [ngTemplateOutlet]="folderContentNewTemplate ? folderContentNewTemplate : defaultFolderContentNewTemplate"></ng-container>
+        </div>
+      </div>
       <!--top navbar Header search function-->
       <div class="navigation">
         <app-navigation>

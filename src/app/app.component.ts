@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 // import {TreeModel, NodeInterface, ConfigInterface} from 'ng6-file-man';
-import {TreeModel, NodeInterface, ConfigInterface} from '../../projects/file-manager/src/public_api';
+import {TreeModel, NodeInterface, ConfigInterface, FileSizePipe} from '../../projects/file-manager/src/public_api';
 
 @Component({
   selector: 'app-root',

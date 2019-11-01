@@ -261,6 +261,7 @@ export class FileManagerComponent implements OnInit {
   }
 
   handleUploadDialog(event: any) {
+   // console.log(event);
     this.newDialog = event;
   }
 

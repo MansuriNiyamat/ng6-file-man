@@ -76,6 +76,10 @@
         <td>Created Date:</td>
         <td>{{node.createdDate | date}}</td>
       </tr>
+      <tr *ngIf='node.size'>
+        <td>Size:</td>
+        <td>{{node.size | fileSize}}</td>
+      </tr>
     </table>
   </div>
 </ng-template>

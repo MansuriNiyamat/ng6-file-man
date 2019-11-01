@@ -56,7 +56,8 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [
     FileManagerComponent,
     LoadingOverlayComponent,
-    SideViewComponent
+    SideViewComponent,
+    FileSizePipe
   ]
 })
 export class FileManagerModule {

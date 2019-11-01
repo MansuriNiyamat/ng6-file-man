@@ -9,5 +9,5 @@ export interface NodeInterface {
   stayOpen?: boolean;
   name?: string;
   children?: any;
-  modifiedDate?: Date;
+  size?: number;
 }
