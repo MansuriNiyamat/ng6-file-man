@@ -21,7 +21,7 @@ export class TreeModel {
       stayOpen: true,
       name: 'root',
       children: {},
-      isRoot: true
+      isRoot: true,
     };
   }
 

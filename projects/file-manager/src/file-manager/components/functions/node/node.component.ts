@@ -52,7 +52,7 @@ export class NodeComponent implements OnInit {
     }
 
     if (this.node.stayOpen) {
-      if (this.node.name == 'root') {
+      if (this.node.name === 'root') {
         this.nodeService.foldAll();
       }
 

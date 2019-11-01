@@ -6,8 +6,11 @@
 
 <div id="file-manager">
   <fm-file-manager [tree]="tree"
+                   [language]="appLanguage"
+                   [openFilemanagerButtonLabelKey]="'hello.test'"
                    [isPopup]="true"
                    (itemClicked)="itemClicked($event)"
+                   (itemSelected)="itemSelected($event)"
                    [iconTemplate]="iconTemplate"
                    [folderContentTemplate]="folderContentTemplate"
                    [folderContentBackTemplate]="folderContentBackTemplate"
@@ -68,6 +71,10 @@
       <tr>
         <td>ID:</td>
         <td>{{node.id}}</td>
+      </tr>
+      <tr>
+        <td>Created Date:</td>
+        <td>{{node.createdDate | date}}</td>
       </tr>
     </table>
   </div>

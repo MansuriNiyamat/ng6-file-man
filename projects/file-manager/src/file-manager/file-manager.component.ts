@@ -1,14 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {TreeModel} from './models/tree.model';
-import {NodeService} from './services/node.service';
-import {NodeInterface} from './interfaces/node.interface';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { TreeModel } from './models/tree.model';
+import { NodeService } from './services/node.service';
+import { NodeInterface } from './interfaces/node.interface';
 import * as ACTIONS from './reducers/actions.action';
-import {SET_LOADING_STATE} from './reducers/actions.action';
-import {AppStore} from './reducers/reducer.factory';
-import {NgxSmartModalService} from 'ngx-smart-modal';
-import {NodeClickedService} from './services/node-clicked.service';
-import {TranslateService} from '@ngx-translate/core';
+import { SET_LOADING_STATE } from './reducers/actions.action';
+import { AppStore } from './reducers/reducer.factory';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+import { NodeClickedService } from './services/node-clicked.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'fm-file-manager',
@@ -86,7 +86,7 @@ export class FileManagerComponent implements OnInit {
           return;
         }
 
-        this.handleFileManagerClickEvent({type: 'select', node: node});
+        this.handleFileManagerClickEvent({ type: 'select', node: node });
       });
   }
 
@@ -95,30 +95,28 @@ export class FileManagerComponent implements OnInit {
   }
 
   searchClicked(data: any) {
-    // console.log(data);
-
     const node = this.nodeService.findNodeById(data.id);
     this.ngxSmartModalService.getModal('searchModal').close();
-    this.store.dispatch({type: ACTIONS.SET_SELECTED_NODE, payload: node});
+    this.store.dispatch({ type: ACTIONS.SET_SELECTED_NODE, payload: node });
   }
 
   handleFileManagerClickEvent(event: any) {
     switch (event.type) {
-      case 'closeSideView' :
+      case 'closeSideView':
         return this.nodeClickHandler(event.node, true);
 
-      case 'select' :
+      case 'select':
         this.onItemClicked(event);
         this.highlightSelected(event.node);
         return this.nodeClickHandler(event.node);
 
-      case 'download' :
+      case 'download':
         this.nodeClickedService.startDownload(event.node);
         return this.onItemClicked(event);
 
-      case 'renameConfirm' :
+      case 'renameConfirm':
         return this.ngxSmartModalService.getModal('renameModal').open();
-      case 'rename' :
+      case 'rename':
         this.ngxSmartModalService.getModal('renameModal').close();
 
         this.nodeClickedService.rename(this.selectedNode.id, event.value);
@@ -139,14 +137,14 @@ export class FileManagerComponent implements OnInit {
           node: this.selectedNode
         });
 
-      case 'createFolder' :
+      case 'createFolder':
         const parentId = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
 
         this.nodeClickedService.createFolder(parentId, event.payload);
         return this.onItemClicked({
           type: event.type,
           parentId: parentId,
-          newDirName: event.payload
+          newDirName: event.payload,
         });
     }
   }
@@ -158,24 +156,24 @@ export class FileManagerComponent implements OnInit {
 
     if (closing) {
       const parentNode = this.nodeService.findNodeByPath(this.nodeService.currentPath);
-      this.store.dispatch({type: ACTIONS.SET_SELECTED_NODE, payload: parentNode});
+      this.store.dispatch({ type: ACTIONS.SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
-    }
-    else {
-      if (this.selectedNode === node && this.sideMenuClosed)
+    } else {
+      if (this.selectedNode === node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
-      else if (this.selectedNode === node && !this.sideMenuClosed)
+      } else if (this.selectedNode === node && !this.sideMenuClosed) {
         this.sideMenuClosed = true;
-      else if (this.selectedNode !== node && this.sideMenuClosed)
+      } else if (this.selectedNode !== node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
-      else if (this.selectedNode !== node && !this.sideMenuClosed)
+      } else if (this.selectedNode !== node && !this.sideMenuClosed) {
         this.sideMenuClosed = false;
+      }
     }
 
     this.selectedNode = node;
 
     // todo investigate this workaround - warning: [File Manager] failed to find requested node for path: [path]
-    if(!document.getElementById('side-view')) {
+    if (!document.getElementById('side-view')) {
       return;
     }
 
@@ -259,7 +257,7 @@ export class FileManagerComponent implements OnInit {
   backdropClicked() {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
-    this.store.dispatch({type: SET_LOADING_STATE, payload: false});
+    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
   }
 
   handleUploadDialog(event: any) {

@@ -5,7 +5,9 @@ export interface NodeInterface {
   pathToParent: string;
   isFolder: boolean;
   isExpanded: boolean;
+  createdDate?: Date;
   stayOpen?: boolean;
   name?: string;
   children?: any;
+  modifiedDate?: Date;
 }

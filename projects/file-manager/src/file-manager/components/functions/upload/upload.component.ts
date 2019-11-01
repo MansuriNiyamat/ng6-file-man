@@ -9,7 +9,8 @@ import {NodeService} from '../../../services/node.service';
   styleUrls: ['./upload.component.scss', './fine-uploader/fine-uploader.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class UploadComponent implements OnInit, AfterViewInit {
+export class 
+UploadComponent implements OnInit, AfterViewInit {
   @Input() openDialog;
 
   @Output() closeDialog = new EventEmitter();
