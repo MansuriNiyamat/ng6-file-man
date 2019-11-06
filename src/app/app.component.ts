@@ -14,8 +14,8 @@ export class AppComponent {
 
   constructor() {
     const treeConfig: ConfigInterface = {
-      baseURL: 'http://localhost:8082/',
-     // baseURL: 'http://172.16.60.253:5001/',
+     // baseURL: 'http://localhost:8082/',
+      baseURL: 'http://172.16.60.253:5001/',
       api: {
         listFile: 'api/list',
         uploadFile: 'api/upload',
@@ -23,7 +23,8 @@ export class AppComponent {
         deleteFile: 'api/remove',
         createFolder: 'api/directory',
         renameFile: 'api/rename',
-        searchFiles: 'api/search'
+        searchFiles: 'api/search',
+        signPostUrl: 'api/sign',
       },
       options: {
         allowFolderDownload: false,

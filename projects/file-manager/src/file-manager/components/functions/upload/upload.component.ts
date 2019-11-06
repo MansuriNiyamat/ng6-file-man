@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {FineUploader} from 'fine-uploader';
+import {s3} from 'fine-uploader/lib/s3';
 import {NodeService} from '../../../services/node.service';
 
 @Component({
@@ -16,7 +16,7 @@ UploadComponent implements OnInit, AfterViewInit {
   @Output() closeDialog = new EventEmitter();
   @Output() createDir = new EventEmitter();
 
-  uploader: FineUploader;
+  uploader: s3.FineUploader;
   newFolder = false;
   counter = 0;
 
@@ -25,7 +25,7 @@ UploadComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.uploader = new FineUploader({
+    this.uploader = new s3.FineUploader({
       debug: false,
       autoUpload: false,
       maxConnections: 1, // todo configurable
@@ -53,6 +53,11 @@ UploadComponent implements OnInit, AfterViewInit {
             this.nodeService.refreshCurrentPath();
           }
         }
+      },
+      signature: {
+        endpoint: this.nodeService.tree.config.baseURL + this.nodeService.tree.config.api.signPostUrl,
+        method: 'post',
+        signPost: true
       }
     })
     ;

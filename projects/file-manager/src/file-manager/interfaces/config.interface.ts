@@ -10,6 +10,7 @@ export interface ConfigInterface {
     createFolder: string;
     renameFile: string;
     searchFiles: string;
+    signPostUrl: string;
   };
   options: {
     allowFolderDownload: boolean;

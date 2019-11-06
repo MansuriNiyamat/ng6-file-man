@@ -30,7 +30,7 @@ export class NodeClickedService {
   public initDelete(node: NodeInterface): void {
     this.sideEffectHelper(
       'Delete',
-      {path: node.id},
+      {path: node.id, isDir: node.isFolder},
       'delete',
       this.tree.config.api.deleteFile,
       () => this.successWithModalClose()
