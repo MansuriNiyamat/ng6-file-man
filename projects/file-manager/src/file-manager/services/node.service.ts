@@ -74,7 +74,7 @@ export class NodeService {
       pathToParent: this.getParentPath(node.path),
       name: node.name || node.id,
       children: cachedNode ? cachedNode.children : {},
-      createdDate: new Date(),
+      createdDate: node.created_on,
       size: node.size,
     };
   }

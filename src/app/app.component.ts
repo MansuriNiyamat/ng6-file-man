@@ -15,6 +15,7 @@ export class AppComponent {
   constructor() {
     const treeConfig: ConfigInterface = {
       baseURL: 'http://localhost:8082/',
+     // baseURL: 'http://172.16.60.253:5001/',
       api: {
         listFile: 'api/list',
         uploadFile: 'api/upload',

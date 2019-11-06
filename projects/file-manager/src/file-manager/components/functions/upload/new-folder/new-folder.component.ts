@@ -10,7 +10,7 @@ export class NewFolderComponent implements OnInit {
   @ViewChild('uploadFolder', {static: false}) uploadFolder: ElementRef;
   @Output() buttonClicked = new EventEmitter();
 
-  buttonText = _('filemanager.close').toString();
+  buttonText = _('close').toString();
   inputValue = '';
 
   constructor() {
@@ -28,9 +28,9 @@ export class NewFolderComponent implements OnInit {
   onInputChange(event: any) {
     this.inputValue = event.target.value;
     if (this.inputValue.length > 0) {
-      this.buttonText = _('filemanager.confirm').toString();
+      this.buttonText = _('confirm').toString();
     } else {
-      this.buttonText = _('filemanager.close').toString();
+      this.buttonText = _('close').toString();
     }
   }
 }

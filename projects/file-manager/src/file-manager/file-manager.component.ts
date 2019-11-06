@@ -26,7 +26,7 @@ export class FileManagerComponent implements OnInit {
 
   @Input() tree: TreeModel;
   @Input() isPopup: boolean = false;
-  @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
+  @Input() openFilemanagerButtonLabelKey = 'open_file_manager';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
 

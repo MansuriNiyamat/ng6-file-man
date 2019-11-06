@@ -50,7 +50,7 @@ export class NodeClickedService {
   public createFolder(currentParent: number, newDirName: string) {
     this.sideEffectHelper(
       'Create Folder',
-      {dirName: newDirName, parentPath: currentParent === 0 ? null : currentParent, createdDate: new Date()},
+      {dirName: newDirName, parentPath: currentParent === 0 ? null : currentParent},
       'post',
       this.tree.config.api.createFolder
     );

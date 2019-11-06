@@ -14,7 +14,7 @@ export class LoadingOverlayComponent implements OnInit {
   // todo unsubscribe from 'list' event - now we are only dismissing this component
   ngOnInit() {
     timer(2000).subscribe(() => {
-      this.timeoutMessage = _('filemanager.loading_troubles');
+      this.timeoutMessage = _('Loading Troubles');
     });
   }
 }
